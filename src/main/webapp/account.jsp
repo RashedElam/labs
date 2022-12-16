@@ -93,10 +93,10 @@
                     <tr><td><input class="input" type="hidden" name="submitted" value="submitted"  %></td></tr>
                     <tr>
                         <%if(emailView != null) {%>
-                            <td><a class="button" href="index.jsp">Home</a></td>
+                        <td><a class="button tabButton" href="index.jsp">Home</a></td>
                             
                         <%}else {%>
-                            <td class="tdd"><a class="button" href="main.jsp">Main</a></td>
+                        <td><a class="button" href="main.jsp">Main</a></td>
                         <%}%>
                         <td>
                             <input class="button tabButton" type="submit" value="Update" />

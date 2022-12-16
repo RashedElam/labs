@@ -25,7 +25,7 @@
                             <td><a class="button" href="register.jsp">Register</a></td>
                             <td><a class="button" href="login.jsp">Login</a></td>
                             <td><a class="button" href="strings.jsp">Strings</a></td>
-                            <td><a class="button" href="admin.jsp">Admin</a></td>
+                            <td><a class="button" href="adminLogin.jsp">Admin</a></td>
                             
                         </tr>
                         

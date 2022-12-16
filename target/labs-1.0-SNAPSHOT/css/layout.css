@@ -37,14 +37,13 @@ body{
     text-decoration: none;
     outline: none;
     color: #D5D9DD;
-    background-color: #0b5394;
-    background-color: #003333;
+    background-color: blue;
     border: none;
     border-radius: 8px; 
 }
 
 .button:hover {
-    background-color: #2A655A;
+    background-color: green;
     color: blue;
 }
 
@@ -64,12 +63,11 @@ body{
     border-collapse: collapse;
     border: solid white;
     margin: auto;
-    margin-top : 5%;
+    margin-top : 2%;
     width: 50%;
     color:#cccccc;
     background-color:#a2c4c9;
     opacity: 0.5;
-    
 }
 
 td {
@@ -81,9 +79,9 @@ td {
 
 .td{
     width: 20%;
-    color: #003333;
+    color: green;
     background-color: #ccffff;
-    border-bottom: solid;
+    border-bottom: solid green;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -102,7 +100,7 @@ td {
 }
 
 .input{
-    background-color:#003333;
+    background-color:#003913;
     color: #ccffff;
     font-size: 16px;
     width: 100%;
@@ -122,19 +120,10 @@ td {
     transform: translateY(4px);
 }
 
-caption{
-    font-size: 34px;
-    padding: 15px; 
-    background-color:#003333; 
-    border: solid 1px;
-    color: white;
-    border-color: black;
-}
-
 .header{
     color: greenyellow;
     padding-left: 15px;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     
 }
@@ -143,28 +132,28 @@ caption{
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #110000;
-    font-size: 36px;
+    background-color: #111900;
+    font-size: 25px;
     padding: 3px;
     text-align: center;
-    color: #D5D9DD;
+    color: greenyellow;
     opacity: 0.5;
 }
 
 .navbar{
-    background-color: #110000;
+    background-color: #111900;
     opacity: 0.5;
 }
 
 h1{
-    color:activeborder;
+    color:#3e8e41;
     padding: 20px;
     color: #003333;
     text-align: center;
     opacity: 0.6;
 }
 .message{       
-    color: #ff6666;
+    color: red;
     font-weight: bold;
     font-size: 20px;
 }
@@ -174,7 +163,6 @@ h1{
     border-collapse: collapse;
     border: 5px solid #3F9787;
     margin-top : 5%;
-    background-size: contains;
     background-color: white;
     opacity: 0.5;
     color:green;
@@ -182,17 +170,3 @@ h1{
     padding: 10px;
     margin-left: 10px;
 }
-
-/*.td{
-    padding-left: 100px;
-    border: solid white;
-    margin-top : 5%;
-    width: 40%;
-    background-color: #54687F;
-    opacity: 0.9;
-    text-align: center;
-    color: #003333;
-    font-size: 20px
-    
-}*/
-

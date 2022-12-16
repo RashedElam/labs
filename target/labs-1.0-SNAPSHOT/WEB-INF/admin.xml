@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<admins>
+    <admin>
+        <ID>834281</ID>
+        <name>Bob Rob</name>
+        <email>bob.rob@example.com</email>
+        <password>Helloo123</password>
+        <dob>2000-02-12</dob>
+    </admin>
+</admins>
+
+

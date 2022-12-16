@@ -28,4 +28,4 @@
     </users>
 </c:set> 
 
-<x:transform xml="${xml}" xslt="${xslt}"></x:transform>>
+<x:transform xml="${xml}" xslt="${xslt}"></x:transform>
