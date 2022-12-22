@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -83,4 +84,16 @@ public class UserDAO implements Serializable{
         this.users.remove(user);
         save(this.users, filePath);
     }
+
+
+    public String marshal(Users users) throws JAXBException, IOException{
+        StringWriter writer = new StringWriter();
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller marshaller = jc.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.marshal(users, writer);
+        save(users, filePath);
+        return writer.toString();
+    }
+    
 }

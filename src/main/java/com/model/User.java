@@ -25,7 +25,7 @@ public class User implements Serializable{
     private String dob;
 
     public User(String name, String email, String password, String dob) {
-        this.ID = new Random().nextInt(999);
+        this.ID = new Random().nextInt(999999);
         this.name = name;
         this.email = email;
         this.password = password;

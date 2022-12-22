@@ -14,7 +14,7 @@
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
-    <xsl:template match="users">
+    <xsl:template match="/">
         <html>
             <head>
                 <title>users.xsl</title>
@@ -31,6 +31,14 @@
                                 <tr>
                                     <td><h1 class="header">Fronter</h1></td>
                                     <td><a class="button" href="index.jsp">Home</a></td>
+                                    <form class="center" method="Post" action="admin1.jsp">
+                                                                              
+                                        <td>
+                                            <input type="number" name="ID" placeholder="write an ID"/>                                                                                                                               
+                                        </td>
+                                        <td><input class="button" type="submit" value="submit"/></td>
+                                    </form>
+                         
                                 </tr>                                                              
                             </table>
 
@@ -53,24 +61,25 @@
             </tbody>
         </table>
     </xsl:template>
-    <xsl:template match="/users/user">
-        <tr>
-            <td>
-                <xsl:value-of select="ID"/>
-            </td>
-            <td>
-                <xsl:value-of select="name"/>
-            </td>
-            <td>
-                <xsl:variable name="emailurl" select="email"></xsl:variable>
-                <a href="http://localhost:8080/labs/account.jsp?email={$emailurl}">
-                    <xsl:value-of select="email"/>
-                </a>
-            </td>
-            <td>
-                <xsl:value-of select="dob"/>
-            </td>
-        </tr>        
+    <xsl:template match="//user">
+        
+                <tr>
+                    <td>
+                        <xsl:value-of select="ID"/>
+                    </td>
+                    <td>
+                        <xsl:value-of select="name"/>
+                    </td>
+                    <td>
+                        <xsl:variable name="emailurl" select="email"></xsl:variable>
+                        <a href="http://localhost:8080/labs/account.jsp?email={$emailurl}">
+                            <xsl:value-of select="email"/>
+                        </a>
+                    </td>
+                    <td>
+                        <xsl:value-of select="dob"/>
+                    </td>
+                </tr>       
     </xsl:template>
 
 </xsl:stylesheet>

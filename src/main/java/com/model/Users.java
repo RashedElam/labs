@@ -42,6 +42,10 @@ public class Users implements Serializable{
         return this.users.stream().filter(user -> user.match(email)).findAny().orElse(null);
     }
     
+    public User userPass(String password){
+        return this.users.stream().filter(user -> user.match(password)).findAny().orElse(null);
+    }
+    
     public User user(int ID){
         return this.users.stream().filter(user -> user.match(ID)).findAny().orElse(null);
     }

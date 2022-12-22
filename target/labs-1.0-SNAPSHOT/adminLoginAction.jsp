@@ -34,7 +34,7 @@
             
             if (admin != null) {
                 session.setAttribute("admin", admin);
-                response.sendRedirect("admin.jsp");
+                response.sendRedirect("admin2.jsp");
             } else {
                 session.setAttribute("error", "Admin does not exist");
                 response.sendRedirect("adminLogin.jsp");
