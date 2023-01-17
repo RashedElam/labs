@@ -3,7 +3,8 @@
     Created on : 09-Dec-2022, 10:36:57 AM
     Author     : 236358
 --%>
-
+<%@page import="com.model.dao.AdminSqlDAO"%>
+<%@page import="com.model.dao.UserSqlDAO"%>
 <%@page import="com.model.Users"%>
 <%@page import="com.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,21 +22,18 @@
         <%!
             User user;
         %>
-        <% String filename = application.getRealPath("/WEB-INF/users.xml");%>
-        <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
-            <jsp:setProperty name="userDAO" property="filePath" value="<%=filename%>"/>
-        </jsp:useBean>
+       
 
         <%
-            Users users = userDAO.getUsers();
+            UserSqlDAO userSqlDAO = (UserSqlDAO) session.getAttribute("userSqlDAO");
             String emailView = (String) session.getAttribute("emailView");
             if(emailView != null){
-                user = users.user(emailView);
+                user = userSqlDAO.getUser(emailView);
             }else{
                 user = (User) session.getAttribute("user");
             }
             if (user != null) {
-                userDAO.delete(users, user);
+                userSqlDAO.delete(user.getID());
             }
         %>
         <nav class="navbar navbar-dark bg-orange">

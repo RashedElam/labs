@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="com.model.User"%>
+<%@page import="com.model.dao.UserSqlDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,9 +19,7 @@
     </head>
     <body onload="startTime()">
         <% 
-            String name = request.getParameter("name");
-            String email = request.getParameter("email");
-            String dob = request.getParameter("dob");
+            
             User user= (User)session.getAttribute("user");
         %>
         <nav class="navbar navbar-dark bg-orange">
@@ -29,8 +28,8 @@
                     <table>
                         <tr>
                             <td><h1 class="header">Fronter</h1></td>
-                            <td><a class="button" href="account.jsp">Account</a></td>
-                            <td><a class="button" href="logout.jsp">Logout</a></td>
+                            <td><a class="button" href="/labs/MainServlet">Account</a></td>
+                            <td><a class="button" href="/labs/LogoutServlet">Logout</a></td>
                         </tr>                                                              
                     </table>
                     

@@ -32,6 +32,23 @@ public class User implements Serializable{
         this.dob = dob;
     }
     
+//    public User(String name, String email, String password, String dob) {
+//        this.name = name;
+//        this.email = email;
+//        this.password = password;
+//        this.dob = dob;
+//    }
+    
+    public User(int ID, String name, String email, String password, String dob) {
+        this.ID = ID;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.dob = dob;
+    }
+    
+    
+    
     public User(){}
 
     public boolean login(String email, String password){
@@ -98,4 +115,8 @@ public class User implements Serializable{
         return this.ID == ID;
     }
     
+    @Override
+    public String toString() {
+        return  ID + "\t" + name + "\t" + email + "\t\t" + dob;
+    } 
 }

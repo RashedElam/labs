@@ -37,7 +37,7 @@
         %>
         
         <div>
-            <form class="" method="Post" action="welcome.jsp">
+            <form class="" method="POST" action="/labs/RegisterServlet">
                 <table class ="tab">
                     <thead class="thead">
                         <tr>

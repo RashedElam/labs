@@ -30,6 +30,10 @@ public class Users implements Serializable{
         this.users.add(user);
     }
     
+    public void addAll(List<User> temp){
+        this.users.addAll(temp);
+    }
+    
     public void remove(User other){
         users.removeIf(u -> u.match(other));
     }
@@ -61,5 +65,6 @@ public class Users implements Serializable{
     public void show(){
         this.users.forEach(u -> System.out.println(u));
     }
+    
     
 }

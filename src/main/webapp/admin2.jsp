@@ -20,7 +20,6 @@
             String xslPath = application.getRealPath("/xsl/users.xsl");
             XmlTransformer transformer = new XmlTransformer();
             transformer.transform(xslPath, UserServiceClient.xmlPath(), new StreamResult(out));
-            //transformer.transform(xslPath, UserServiceClient.fetchUser(), new StreamResult(out));
         %>
 
     </body>

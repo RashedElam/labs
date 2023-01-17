@@ -38,7 +38,7 @@
             
         %>
         <div>
-            <form class="" method="Post" action="loginAction.jsp">
+            <form method="POST" action="/labs/LoginServlet">
                 <table class ="tab">
                     <thead class="thead">
                         

@@ -38,7 +38,7 @@
             
         %>
         <div>
-            <form class="" method="Post" action="adminLoginAction.jsp">
+            <form class="" method="POST" action="/labs/AdminServlet">
                 <table class ="tab">
                     <thead class="thead">
                         

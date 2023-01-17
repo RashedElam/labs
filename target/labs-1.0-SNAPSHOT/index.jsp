@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.model.dao.AdminSqlDAO"%>
+<%@page import="com.model.dao.SqlDBConnector"%>
+<%@page import="com.model.dao.UserSqlDAO"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,5 +39,6 @@
         </nav>
         <h1>Welcome to Fronter software</h1>
         <div id="clock" class="footer"></div>
+        <jsp:include page="/InitServlet" flush="true" />
     </body>
 </html>
