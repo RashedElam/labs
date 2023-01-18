@@ -1,43 +1,32 @@
+<%@page import="com.model.dao.UserSqlDAO"%>
 <%@page import="com.model.User"%>
-<%@page import="com.model.dao.UserDAO"%>
-<%@page import="com.rest.client.UserServiceClient"%>
-<%@page import="javax.xml.transform.stream.StreamResult"%>
-<%@page import="com.model.dao.XmlTransformer"%>
 <%@page import="com.model.Users"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin View - User Service Client</title>
-    </head>
-    <body>
-        <% String filename = application.getRealPath("/WEB-INF/users.xml");%>       
-            <jsp:useBean id="userDAO" class="com.model.dao.UserDAO" scope="application">
-                <jsp:setProperty name="userDAO" property="filePath" value="<%=filename%>"/>
-            </jsp:useBean>
-        <%
-            session.invalidate();
-            request.setAttribute("email", null);
-            request.removeAttribute("email");
-        %>        
-        <% 
-            int ID = Integer.parseInt(request.getParameter("ID"));
-            
-            Users users = userDAO.getUsers();
-            User user = users.user(ID);
-            String xslPath = application.getRealPath("/xsl/users.xsl");
-            XmlTransformer transformer = new XmlTransformer();
-            transformer.transform(xslPath, UserServiceClient.fetchUser(ID), new StreamResult(out));
-            if (user != null) {
-                session.setAttribute("user", user);
-            } else {
-                session.setAttribute("error", "user does not exist");
-                response.sendRedirect("admin2.jsp");
-            }
-            
-            
-        %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
-    </body>
-</html>
+
+<%
+    request.setAttribute("emailView", null);
+    request.removeAttribute("emailView");
+%>
+<% 
+    UserSqlDAO userSqlDAO = (UserSqlDAO) session.getAttribute("userSqlDAO"); 
+    Users users = new Users();
+    users.addAll(userSqlDAO.getUsers());
+%>
+
+<c:import url="/xsl/users.xsl" var="xslt"/>
+<c:set var="xml">
+    <users>
+        <% for (User user : users.getUsers()) {%>
+        <user>
+            <ID><%= user.getID()%></ID>
+            <name><%= user.getName()%></name>
+            <email><%=user.getEmail()%></email>
+            <dob><%= user.getDob()%></dob>
+        </user>
+        <% }%>
+    </users>
+</c:set> 
+
+<x:transform xml="${xml}" xslt="${xslt}"></x:transform>

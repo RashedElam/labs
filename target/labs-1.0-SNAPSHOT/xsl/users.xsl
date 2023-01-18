@@ -22,6 +22,7 @@
                 <script type="text/javascript" src="js/index.js"></script>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                <script type="text/javascript" src="js/index.js"></script>
             </head>
             <body>
                 <nav class="navbar navbar-dark bg-dark">
@@ -31,14 +32,15 @@
                                 <tr>
                                     <td><h1 class="header">Fronter</h1></td>
                                     <td><a class="button" href="index.jsp">Home</a></td>
-                                    <form class="center" method="Post" action="admin1.jsp">
+                                    <form class="center" method="POST" action="/labs/SearchServlet">
                                                                               
                                         <td>
-                                            <input type="number" name="ID" placeholder="write an ID"/>                                                                                                                               
+                                            <input type="text" name="ID" placeholder="Search by ID"/>                                                                                                                               
                                         </td>
-                                        <td><input class="button" type="submit" value="submit"/></td>
-                                    </form>
-                         
+                                        <td>
+                                            <input class="button" type="submit" value="submit"/>
+                                        </td>
+                                    </form>                         
                                 </tr>                                                              
                             </table>
 

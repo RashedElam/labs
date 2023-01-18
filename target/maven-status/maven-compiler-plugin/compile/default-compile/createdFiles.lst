@@ -24,6 +24,7 @@ com\model\dao\UserDAO.class
 com\model\dao\SqlDB.class
 com\model\User.class
 com\model\dao\SqlDBConnector.class
+com\controller\SearchServlet.class
 com\controller\LogoutServlet.class
 com\model\Rectangle.class
 com\controller\AccountServlet.class

@@ -11,19 +11,21 @@
 %>
 <% 
     UserSqlDAO userSqlDAO = (UserSqlDAO) session.getAttribute("userSqlDAO"); 
-    Users users = new Users();
+    Users users = new Users();    
     users.addAll(userSqlDAO.getUsers());
+    
+    
 %>
 
 <c:import url="/xsl/users.xsl" var="xslt"/>
 <c:set var="xml">
     <users>
-        <% for (User user : users.getUsers()) {%>
+        <% for (User u : users.getUsers()) {%>
         <user>
-            <ID><%= user.getID()%></ID>
-            <name><%= user.getName()%></name>
-            <email><%=user.getEmail()%></email>
-            <dob><%= user.getDob()%></dob>
+            <ID><%= u.getID()%></ID>
+            <name><%= u.getName()%></name>
+            <email><%=u.getEmail()%></email>
+            <dob><%= u.getDob()%></dob>
         </user>
         <% }%>
     </users>

@@ -32,7 +32,7 @@
                         <tr>
                             <td><h1 class="header">Fronter</h1></td>
                             <td><a class="button" href="/labs/MainServlet">Main-Page</a></td>
-                            <td><a class="button" href="/labs/LogoutServLet">Logout</a></td>
+                            <td><a class="button" href="/labs/LogoutServlet">Logout</a></td>
                         </tr>                                                              
                     </table>
                     

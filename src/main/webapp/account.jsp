@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : account
     Created on : 29-Nov-2022, 3:27:36 PM
@@ -27,7 +28,7 @@
                         <tr>
                             <td><h1 class="header">Fronter</h1></td>
                             <td><a class="button" href="main.jsp">Main-Page</a></td>
-                            <td><a class="button" href="logout.jsp">Logout</a></td>
+                            <td><a class="button" href="/labs/LogoutServlet">Logout</a></td>
                         </tr>                                                              
                     </table>
                     

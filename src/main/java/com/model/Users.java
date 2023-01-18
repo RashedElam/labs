@@ -66,5 +66,8 @@ public class Users implements Serializable{
         this.users.forEach(u -> System.out.println(u));
     }
     
+    public void clear(){
+        this.users.clear();
+    }
     
 }
